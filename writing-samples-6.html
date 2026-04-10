@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Samples — Sangamitra</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Sans+Condensed:wght@300;400;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* York */
+  --yr:#E31837;--yrm:#AF0D1A;--yrd:#810001;--yw:#fff;--yb:#000;--yg:#E1DFDC;--ygd:#686260;
+  /* TAC */
+  --ta:#C4612A;--tad:#2C1A0E;--tac:#FAF6EF;--tam:#E8DDD0;--tamt:#9A7B64;
+  /* FoodShare */
+  --fd:#1B4332;--fm:#52796F;--fl:#B7D1C4;--fc:#F2F7F4;--fg:#D4A84B;
+  /* Global */
+  --off:#f5f3ef;
+}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--off);color:#111;overflow-x:hidden;cursor:none}
+#cur{position:fixed;width:9px;height:9px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.12s,background 0.4s;background:var(--yr)}
+#curR{position:fixed;width:30px;height:30px;border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left 0.09s,top 0.09s,transform 0.12s,border-color 0.4s;border:1.5px solid var(--yr)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:600;height:56px;background:#000;border-bottom:2px solid var(--yr);display:flex;align-items:center;justify-content:space-between;padding:0 3rem}
+.nav-l{display:flex;align-items:center;gap:1.25rem}
+.nav-name{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none}
+.nav-name em{color:var(--yr);font-style:normal}
+.nav-pipe{width:1px;height:18px;background:#2a2a2a}
+.nav-sub{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:#686260;letter-spacing:0.1em;text-transform:uppercase}
+.nav-r{display:flex;gap:2rem;align-items:center}
+.nav-a{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:#686260;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s;cursor:none}
+.nav-a:hover,.nav-a.on{color:#fff;border-bottom-color:var(--yr)}
+.nav-count{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--yr);letter-spacing:0.08em;border:1px solid var(--yr);padding:3px 10px}
+
+/* ── HERO ── */
+.hero{background:#000;padding:8rem 3rem 0;position:relative;overflow:hidden;border-bottom:3px solid var(--yr)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(227,24,55,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(227,24,55,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-bg{position:absolute;right:-2%;top:50%;transform:translateY(-50%);font-family:'IBM Plex Sans Condensed',sans-serif;font-size:30vw;font-weight:700;color:rgba(227,24,55,0.04);line-height:1;pointer-events:none;letter-spacing:-0.06em;user-select:none}
+.h-mono{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--yr);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:1.25rem;display:block;opacity:0;animation:fup 0.5s ease forwards 0.2s}
+.hero h1{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:clamp(3.5rem,8vw,8rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.04em;line-height:0.88;opacity:0;animation:fup 0.7s ease forwards 0.35s}
+.hero h1 em{color:var(--yr);font-style:normal}
+.hero-desc{font-size:1rem;font-weight:300;color:#B7AEA9;max-width:560px;line-height:1.8;margin-top:1.75rem;opacity:0;animation:fup 0.6s ease forwards 0.6s}
+.hero-desc strong{color:#fff;font-weight:500}
+
+/* ORG STRIP */
+.org-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#111;margin-top:4rem;opacity:0;animation:fup 0.5s ease forwards 0.9s}
+.os{padding:1.5rem 2rem;display:flex;flex-direction:column;gap:5px;cursor:none;transition:opacity 0.2s}
+.os-1{background:var(--yr)}.os-2{background:var(--ta)}.os-3{background:var(--fd)}
+.os:hover{opacity:0.85}
+.os-n{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase}
+.os-name{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.01em}
+.os-types{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:rgba(255,255,255,0.65);letter-spacing:0.06em;text-transform:uppercase;margin-top:4px}
+.os-count{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;font-weight:500;color:rgba(255,255,255,0.5);margin-top:6px}
+
+/* ── ORG BANNER ── */
+.org-banner{padding:1.5rem 3rem 1.25rem;position:relative;border-bottom:2px solid}
+.ob-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem}
+.ob-n{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;letter-spacing:0.14em;opacity:0.6;margin-bottom:0.3rem;display:block}
+.ob-name{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:700;text-transform:uppercase;letter-spacing:-0.03em;line-height:1}
+.ob-tagline{display:none}
+.ob-pills{display:flex;flex-direction:column;gap:6px;align-items:flex-end;flex-shrink:0}
+.ob-pill{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;padding:4px 11px;border:1px solid;letter-spacing:0.08em;text-transform:uppercase}
+
+/* ── ORG BODY ── */
+.org-body{padding:3rem;display:flex;flex-direction:column;gap:2.5rem;max-width:960px;margin:0 auto}
+
+/* TYPE LABEL */
+.tl{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.tl-b{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:4px 12px;letter-spacing:0.08em;text-transform:uppercase;color:#fff}
+.tl-l{flex:1;height:1px}
+
+/* CARD BASE */
+.card{overflow:hidden;opacity:1;transform:translateY(0);transition:opacity 0.6s ease,transform 0.6s ease}
+.card.vis{opacity:1;transform:translateY(0)}
+
+/* ═══════════════════════════════
+   YORK UNIVERSITY
+═══════════════════════════════ */
+.york-sec{background:#f7f5f0}
+.york-banner{background:#000;border-color:var(--yr);color:#fff}
+.york-banner .ob-n{color:var(--yr)}
+.york-banner .ob-pill{border-color:#333;color:#686260}
+.york-tl .tl-b{background:var(--yr)}
+.york-tl .tl-l{background:#E1DFDC}
+.york-body{background:#f7f5f0}
+
+/* York card shells */
+.y-card{border:1px solid #E1DFDC;background:#fff}
+.y-bar{background:#000;padding:9px 14px;display:flex;justify-content:space-between;align-items:center}
+.y-bar-l{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:#686260;letter-spacing:0.08em;text-transform:uppercase}
+.y-bar-r{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--yr);letter-spacing:0.06em}
+
+/* Social visual */
+.y-vis{height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative;overflow:hidden}
+.y-vis-a{background:linear-gradient(145deg,#810001,#E31837)}
+.y-vis-b{background:linear-gradient(145deg,#000,#1a1a1a)}
+.y-vis::before{content:'';position:absolute;top:-20%;right:-10%;width:200px;height:200px;background:rgba(255,255,255,0.06);border-radius:50%}
+.y-vis-tag{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase;position:relative;margin-bottom:0.6rem;display:block}
+.y-vis h3{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:1.9rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.05;position:relative}
+.y-vis p{font-size:0.78rem;color:rgba(255,255,255,0.65);margin-top:5px;font-weight:300;position:relative}
+
+.y-body-p{padding:1.75rem 2rem}
+.y-handle{font-size:0.82rem;font-weight:600;color:#000;margin-bottom:0.6rem;display:flex;align-items:center;gap:6px}
+.y-handle::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--yr);flex-shrink:0}
+.y-cap{font-size:0.95rem;font-weight:300;color:#111;line-height:1.8}
+.y-cap strong{font-weight:600}
+.y-tags{margin-top:0.85rem;font-size:0.78rem;color:#1a6fad;line-height:1.7}
+
+/* York 2-col social grid */
+.y-social-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+
+/* York web */
+.y-browser{background:#f0ede8;padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #E1DFDC}
+.bb-d{display:flex;gap:5px}
+.dd{width:9px;height:9px;border-radius:50%}
+.dd.r{background:#ff5f57}.dd.y{background:#ffbd2e}.dd.g{background:#28c840}
+.bb-url{flex:1;background:#fff;border-radius:3px;padding:3px 10px;font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:#686260;margin:0 0.75rem}
+.y-web-inner{padding:2.75rem 3rem}
+.y-web-eye{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--yr);letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:1rem}
+.y-web-inner h2{font-family:'IBM Plex Serif',serif;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:300;color:#000;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1.25rem}
+.y-web-inner h2 em{font-style:italic;color:var(--yr)}
+.y-web-inner p{font-size:0.95rem;font-weight:300;color:#686260;line-height:1.85;margin-bottom:1rem}
+.y-web-inner p strong{font-weight:600;color:#000}
+.y-cta{display:inline-block;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.75rem 1.75rem;background:var(--yr);color:#fff;text-decoration:none;margin-top:0.5rem;cursor:none;transition:background 0.2s}
+.y-cta:hover{background:var(--yrm)}
+
+/* York press release */
+.y-press{border:1px solid #E1DFDC;background:#fff}
+.y-press-top{background:#000;padding:1rem 2rem;border-bottom:3px solid var(--yr)}
+.y-press-top p{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:#686260;letter-spacing:0.1em;text-transform:uppercase}
+.y-press-top strong{color:var(--yr)}
+.y-press-body{padding:2.5rem 3rem}
+.y-press-body .dateline{font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:#686260;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.25rem;display:block}
+.y-press-body h2{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:1.6rem;font-weight:700;color:#000;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.05;margin-bottom:0.5rem}
+.y-press-body .deck{font-size:1rem;font-weight:300;color:#686260;line-height:1.65;margin-bottom:1.5rem;font-style:italic}
+.y-press-body p{font-size:0.92rem;font-weight:300;color:#444;line-height:1.85;margin-bottom:1rem}
+.y-press-body p strong{font-weight:600;color:#000}
+.y-press-body .quote-block{border-left:3px solid var(--yr);padding:1rem 1.5rem;margin:1.5rem 0;background:#f9f7f4}
+.y-press-body .quote-block p{font-style:italic;font-size:0.95rem;color:#333;margin:0}
+.y-press-body .quote-block cite{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:#686260;letter-spacing:0.06em;text-transform:uppercase;margin-top:8px;display:block;font-style:normal}
+.y-press-body .boilerplate{margin-top:2rem;padding-top:1.25rem;border-top:1px solid #eee;font-size:0.78rem;color:#aaa;line-height:1.65}
+
+/* York event */
+.y-event{background:#000;border:1px solid #1a1a1a;position:relative;overflow:hidden}
+.y-event::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yr)}
+.y-event-in{padding:2.75rem 3rem;position:relative;overflow:hidden}
+.y-event-bg{position:absolute;right:-3%;bottom:-20%;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:20rem;font-weight:700;color:rgba(227,24,55,0.04);line-height:1;pointer-events:none;letter-spacing:-0.06em;user-select:none}
+.y-event .kicker{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--yr);letter-spacing:0.16em;text-transform:uppercase;display:block;margin-bottom:1.25rem;position:relative}
+.y-event h2{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.03em;line-height:0.92;margin-bottom:1.75rem;position:relative}
+.y-event h2 span{color:var(--yr)}
+.e-meta{display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.75rem;position:relative}
+.em{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:6px 14px;border:1px solid #2a2a2a;color:#B7AEA9;letter-spacing:0.06em;text-transform:uppercase}
+.y-event p{font-size:0.95rem;font-weight:300;color:#B7AEA9;line-height:1.85;max-width:580px;margin-bottom:1.75rem;position:relative}
+.y-event p strong{font-weight:500;color:#fff}
+.y-event-cta{display:inline-block;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.85rem 2rem;background:var(--yr);color:#fff;text-decoration:none;position:relative;cursor:none;transition:background 0.2s}
+.y-event-cta:hover{background:var(--yrm)}
+.y-event-ft{background:#080808;padding:0.85rem 3rem;border-top:1px solid #1a1a1a;display:flex;justify-content:space-between}
+.y-event-ft span{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:#686260;letter-spacing:0.08em;text-transform:uppercase}
+
+/* ═══════════════════════════════
+   TORONTO ARTS COLLECTIVE
+═══════════════════════════════ */
+.tac-sec{background:var(--tac)}
+.tac-banner{background:var(--tad);border-color:var(--ta);color:var(--tac)}
+.tac-banner .ob-n{color:var(--ta)}
+.tac-banner .ob-pill{border-color:rgba(196,97,42,0.35);color:var(--tamt)}
+.tac-tl .tl-b{background:var(--ta)}
+.tac-tl .tl-l{background:var(--tam)}
+
+.tac-card{border:1px solid var(--tam);background:#fff}
+
+/* TAC social */
+.tac-vis{height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative;overflow:hidden}
+.tac-vis-a{background:linear-gradient(145deg,#1a0a00,var(--ta))}
+.tac-vis-b{background:linear-gradient(145deg,var(--tad),#5a3018)}
+.tac-vis::before{content:'';position:absolute;top:-20%;right:-10%;width:200px;height:200px;background:rgba(255,255,255,0.07);border-radius:50%}
+.tac-vis-tag{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;position:relative;margin-bottom:0.6rem;display:block}
+.tac-vis h3{font-family:'IBM Plex Serif',serif;font-size:1.8rem;font-weight:400;font-style:italic;color:#fff;line-height:1.1;position:relative}
+.tac-vis p{font-size:0.78rem;color:rgba(255,255,255,0.65);margin-top:5px;position:relative}
+
+.tac-body-p{padding:1.75rem 2rem}
+.tac-handle{font-size:0.82rem;font-weight:600;color:var(--tad);margin-bottom:0.6rem;display:flex;align-items:center;gap:6px}
+.tac-handle::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--ta);flex-shrink:0}
+.tac-cap{font-size:0.95rem;font-weight:300;color:#222;line-height:1.8}
+.tac-cap strong{font-weight:600}
+.tac-tags{margin-top:0.85rem;font-size:0.78rem;color:var(--ta);line-height:1.7}
+
+/* TAC email */
+.tac-em-chrome{background:var(--tac);padding:1rem 1.5rem;border-bottom:1px solid var(--tam);display:flex;flex-direction:column;gap:7px}
+.tef{display:flex;gap:0.75rem;align-items:baseline}
+.tef-l{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--tamt);min-width:30px;letter-spacing:0.06em;text-transform:uppercase}
+.tef-v{font-size:0.82rem;color:var(--tad)}
+.tef-v strong{font-weight:600}
+.tac-em-body{padding:2.75rem 3rem}
+.tac-pre{font-size:0.75rem;color:var(--tamt);margin-bottom:2rem;font-style:italic}
+.tac-hd{border-left:4px solid var(--ta);padding-left:1.25rem;margin-bottom:2rem}
+.tac-hd .tac-org{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--ta);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px}
+.tac-hd h2{font-family:'IBM Plex Serif',serif;font-size:2rem;font-weight:400;color:var(--tad);line-height:1.1;letter-spacing:-0.02em}
+.tac-hd h2 em{font-style:italic;color:var(--ta)}
+.tac-ep{font-size:0.92rem;font-weight:300;color:#555;line-height:1.85;margin-bottom:1rem}
+.tac-ep strong{font-weight:600;color:var(--tad)}
+.tac-hr{border:none;border-top:1px solid var(--tam);margin:1.5rem 0}
+.tac-block{background:var(--tac);border-left:3px solid var(--ta);padding:1rem 1.25rem;margin-bottom:1rem}
+.tac-block p{font-size:0.875rem;font-weight:300;color:#666;line-height:1.75;margin:0}
+.tac-block p strong{font-weight:600;color:var(--tad)}
+.tac-btn{display:inline-block;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.75rem 1.75rem;background:var(--ta);color:#fff;text-decoration:none;margin-top:0.5rem;cursor:none;transition:background 0.2s}
+.tac-btn:hover{background:var(--tad)}
+.tac-em-ft{font-size:0.7rem;color:var(--tamt);margin-top:2rem;line-height:1.7}
+
+/* TAC web */
+.tac-web-inner{padding:2.75rem 3rem;background:#fff}
+.tac-web-inner .eye{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--ta);letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:1rem}
+.tac-web-inner h2{font-family:'IBM Plex Serif',serif;font-size:2.2rem;font-weight:300;color:var(--tad);line-height:1.2;letter-spacing:-0.02em;margin-bottom:1.25rem}
+.tac-web-inner h2 em{font-style:italic;color:var(--ta)}
+.tac-web-inner p{font-size:0.95rem;font-weight:300;color:#666;line-height:1.85;margin-bottom:1rem}
+.tac-web-inner p strong{font-weight:600;color:var(--tad)}
+.tac-web-cta{display:inline-block;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.75rem 1.75rem;background:var(--ta);color:#fff;text-decoration:none;margin-top:0.5rem;cursor:none;transition:background 0.2s}
+.tac-web-cta:hover{background:var(--tad)}
+
+/* TAC browser */
+.tac-browser{background:var(--tac);padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--tam)}
+.tac-url{flex:1;background:#fff;border-radius:3px;padding:3px 10px;font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--tamt);margin:0 0.75rem}
+
+/* ═══════════════════════════════
+   FOODSHARE TORONTO
+═══════════════════════════════ */
+.fs-sec{background:var(--fc)}
+.fs-banner{background:var(--fd);border-color:var(--fg);color:#fff}
+.fs-banner .ob-n{color:var(--fg)}
+.fs-banner .ob-pill{border-color:rgba(212,168,75,0.35);color:var(--fm)}
+.fs-tl .tl-b{background:var(--fd)}
+.fs-tl .tl-l{background:var(--fl)}
+
+.fs-card{border:1px solid var(--fl);background:#fff}
+.fs-bar{background:var(--fd);padding:9px 14px;display:flex;justify-content:space-between;align-items:center}
+.fs-bar-l{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--fm);letter-spacing:0.08em;text-transform:uppercase}
+.fs-bar-r{font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--fg);letter-spacing:0.06em}
+
+.fs-vis{height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative;overflow:hidden}
+.fs-vis-a{background:linear-gradient(145deg,#0d2b1e,var(--fd))}
+.fs-vis-b{background:linear-gradient(145deg,#0a1f15,#1e5c3e)}
+.fs-vis::before{content:'';position:absolute;top:-15%;right:-8%;width:200px;height:200px;background:rgba(82,121,111,0.18);border-radius:50%}
+.fs-vis-tag{font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:var(--fg);letter-spacing:0.12em;text-transform:uppercase;position:relative;margin-bottom:0.75rem;display:block}
+.fs-vis h3{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:1.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.05;position:relative}
+.fs-vis p{font-size:0.78rem;color:rgba(255,255,255,0.65);margin-top:5px;font-weight:300;position:relative}
+
+.fs-body-p{padding:1.75rem 2rem}
+.fs-handle{font-size:0.82rem;font-weight:600;color:var(--fd);margin-bottom:0.6rem;display:flex;align-items:center;gap:6px}
+.fs-handle::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--fg);flex-shrink:0}
+.fs-cap{font-size:0.95rem;font-weight:300;color:#222;line-height:1.8}
+.fs-cap strong{font-weight:600}
+.fs-tags{margin-top:0.85rem;font-size:0.78rem;color:var(--fm);line-height:1.7}
+.fs-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+
+/* FS email */
+.fs-em-chrome{background:var(--fc);padding:1rem 1.5rem;border-bottom:1px solid var(--fl);display:flex;flex-direction:column;gap:7px}
+.fef{display:flex;gap:0.75rem;align-items:baseline}
+.fef-l{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--fm);min-width:30px;letter-spacing:0.06em;text-transform:uppercase}
+.fef-v{font-size:0.82rem;color:var(--fd)}
+.fef-v strong{font-weight:600}
+.fs-em-body{padding:2.5rem 3rem;background:#fff}
+.fs-pre{font-size:0.75rem;color:var(--fm);margin-bottom:2rem;font-style:italic}
+.fs-hd{border-left:4px solid var(--fg);padding-left:1.25rem;margin-bottom:2rem}
+.fs-hd .fs-org{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--fg);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px}
+.fs-hd h2{font-family:'IBM Plex Sans Condensed',sans-serif;font-size:1.9rem;font-weight:700;color:var(--fd);text-transform:uppercase;letter-spacing:-0.02em;line-height:1}
+.fs-ep{font-size:0.92rem;font-weight:300;color:#444;line-height:1.85;margin-bottom:1rem}
+.fs-ep strong{font-weight:600;color:var(--fd)}
+.fs-hr{border:none;border-top:1px solid var(--fl);margin:1.5rem 0}
+.fs-block{background:var(--fc);border-left:3px solid var(--fd);padding:1rem 1.25rem;margin-bottom:1rem}
+.fs-block p{font-size:0.875rem;font-weight:300;color:#555;line-height:1.75;margin:0}
+.fs-block p strong{font-weight:600;color:var(--fd)}
+.fs-btn{display:inline-block;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.75rem 1.75rem;background:var(--fd);color:#fff;text-decoration:none;margin-top:0.5rem;cursor:none;transition:background 0.2s}
+.fs-btn:hover{background:#0f2e22}
+.fs-em-ft{font-size:0.7rem;color:var(--fm);margin-top:2rem;line-height:1.7}
+
+/* FOOTER */
+footer{background:#000;border-top:2px solid var(--yr);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:#686260;letter-spacing:0.08em;text-transform:uppercase}
+footer span{color:var(--yr)}
+
+.rev{opacity:1;transform:translateY(0)}
+.rev.vis{opacity:1;transform:translateY(0)}
+@keyframes fup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:800px){
+  nav{padding:0 1.5rem}.nav-r{display:none}
+  .hero,.org-body{padding-left:1.5rem;padding-right:1.5rem}
+  .org-banner{padding:2.5rem 1.5rem 1.5rem}
+  .ob-inner{flex-direction:column;gap:1rem}
+  .ob-pills{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
+  .org-strip,.y-social-grid,.fs-2col{grid-template-columns:1fr}
+  .y-web-inner,.y-event-in,.tac-em-body,.tac-web-inner,.fs-em-body{padding:2rem 1.5rem}
+  .y-event-ft,.y-press-body{padding:1.5rem}
+  footer{flex-direction:column;gap:0.5rem;padding:2rem 1.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="curR"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-l">
+    <a class="nav-name" href="#"><em>S</em>angamitra</a>
+    <div class="nav-pipe"></div>
+    <span class="nav-sub">Writing Samples</span>
+  </div>
+  <div class="nav-r">
+    <a href="#org-york" class="nav-a">York University</a>
+    <a href="#org-tac" class="nav-a">Toronto Arts Collective</a>
+    <a href="#org-fs" class="nav-a">FoodShare Toronto</a>
+    <span class="nav-count">9 samples</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-bg">W</div>
+  <span class="h-mono">Communications &amp; Marketing Assistant · York University · 2025</span>
+  <h1>Writing<br><em>Samples</em></h1>
+  <p class="hero-desc"><strong>9 original pieces</strong> across social media, website copy, press releases, email newsletters, and event announcements across three organisations, three distinct voices, one consistent standard.</p>
+  <div class="org-strip">
+    <a href="#org-york" class="os os-1" style="text-decoration:none">
+      <span class="os-n">Organisation 01</span>
+      <span class="os-name">York University</span>
+      <span class="os-types">Instagram × 2 · Web Copy · Press Release · Event</span>
+      <span class="os-count">5 samples →</span>
+    </a>
+    <a href="#org-tac" class="os os-2" style="text-decoration:none">
+      <span class="os-n">Organisation 02</span>
+      <span class="os-name">Toronto Arts Collective</span>
+      <span class="os-types">Instagram · Email Newsletter · Web Copy</span>
+      <span class="os-count">3 samples →</span>
+    </a>
+    <a href="#org-fs" class="os os-3" style="text-decoration:none">
+      <span class="os-n">Organisation 03</span>
+      <span class="os-name">FoodShare Toronto</span>
+      <span class="os-types">Instagram × 2 · Email Newsletter</span>
+      <span class="os-count">3 samples → </span>
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ORG 1: YORK UNIVERSITY — 5 samples
+═══════════════════════════════════════════ -->
+<div id="org-york" class="york-sec">
+  <div class="org-banner york-banner">
+    <div class="ob-inner">
+      <div>
+        <span class="ob-n">Organisation 01</span>
+        <div class="ob-name">York University</div>
+        <p class="ob-tagline">All samples follow York's official brand — IBM Plex Sans, York Red #E31837, black and warm grey palette. Tone: bold, inclusive, forward-looking.</p>
+      </div>
+      <div class="ob-pills">
+        <span class="ob-pill">IBM Plex Sans</span>
+        <span class="ob-pill">York Red #E31837</span>
+        <span class="ob-pill">Black #000000</span>
+        <span class="ob-pill">5 samples</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="org-body york-body">
+
+    <!-- 2-COL INSTAGRAM -->
+    <div class="rev">
+      <div class="tl york-tl"><span class="tl-b">Instagram Posts</span><div class="tl-l"></div></div>
+      <div class="y-social-grid">
+
+        <div class="card y-card">
+          <div class="y-bar"><span class="y-bar-l">@yorku_studentlife</span><span class="y-bar-r">Feed Post</span></div>
+          <div class="y-vis y-vis-a">
+            <span class="y-vis-tag">Finals Season</span>
+            <h3>Study Smarter,<br>Not Harder 📚</h3>
+            <p>York's finals week survival guide</p>
+          </div>
+          <div class="y-body-p">
+            <div class="y-handle">yorku_studentlife</div>
+            <p class="y-cap"><strong>Finals season is here and so are we.</strong> Whether you're pulling an all-nighter in Scott Library or finding your focus at Stong Pond, York has everything you need to finish strong. 💪<br><br>Drop your go-to study spot below 👇 and tag a friend who needs this reminder: you've got this.</p>
+            <p class="y-tags">#YorkU #StudyTips #FinalsWeek #StudentLife #KeeleCampus</p>
+          </div>
+        </div>
+
+        <div class="card y-card">
+          <div class="y-bar"><span class="y-bar-l">@yorku_studentlife</span><span class="y-bar-r">Awareness Post</span></div>
+          <div class="y-vis y-vis-b">
+            <span class="y-vis-tag">Mental Health Week</span>
+            <h3>You Don't Have<br>To Be OK.<br>We're Here. 💙</h3>
+            <p>York Student Wellness · Free &amp; Confidential</p>
+          </div>
+          <div class="y-body-p">
+            <div class="y-handle">yorku_studentlife</div>
+            <p class="y-cap"><strong>University is hard. Asking for help isn't.</strong> This Mental Health Awareness Week, we're reminding every student at York: support is always available and you deserve to use it.<br><br>York's Counselling Services are free, confidential, and just one step away. Link in bio 💙</p>
+            <p class="y-tags">#YorkU #MentalHealthWeek #StudentWellness #YouAreNotAlone #YorkUniversity</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WEB COPY -->
+    <div class="rev">
+      <div class="tl york-tl"><span class="tl-b">Website Copy</span><div class="tl-l"></div></div>
+      <div class="card y-card">
+        <div class="y-browser">
+          <div class="bb-d"><div class="dd r"></div><div class="dd y"></div><div class="dd g"></div></div>
+          <div class="bb-url">yorku.ca/futurestudents/why-york</div>
+        </div>
+        <div class="y-web-inner">
+          <span class="y-web-eye">Why York University</span>
+          <h2>A university built for <em>curious minds</em></h2>
+          <p>York University isn't just a place to earn a degree. It's a place to question, challenge, and change. Located in Toronto, Canada's most diverse city, York is home to <strong>over 55,000 students</strong> from more than 175 countries, all united by a commitment to creating positive change in the world.</p>
+          <p>From cutting-edge research labs to student-run initiatives, from award-winning faculty to a campus that never stops moving. York is where ideas become action. Your education doesn't stay in the classroom. It shows up in your community, your career, and your life.</p>
+          <p><strong>Whatever you want to change, start here.</strong></p>
+          <a class="y-cta">Explore Programs →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRESS RELEASE -->
+    <div class="rev">
+      <div class="tl york-tl"><span class="tl-b">Press Release</span><div class="tl-l"></div></div>
+      <div class="card y-press">
+        <div class="y-press-top">
+          <p><strong>FOR IMMEDIATE RELEASE</strong> &nbsp;·&nbsp; Media Contact: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="492a2624243c27202a283d2026273a0930263b223c672a28">[email&#160;protected]</a></p>
+        </div>
+        <div class="y-press-body">
+          <span class="dateline">Toronto, ON · April 10, 2025</span>
+          <h2>York University Launches New Student Innovation Hub at Keele Campus</h2>
+          <p class="deck">The 12,000 sq ft facility will provide students with dedicated space for entrepreneurship, design, and cross-disciplinary collaboration. Opening September 2025.</p>
+          <p>York University today announced the opening of the <strong>York Innovation Hub</strong>, a dedicated facility for student-led entrepreneurship and creative project development, set to open at the Keele Campus in September 2025. The hub is the result of a $4.2 million investment from the university and private partners.</p>
+          <p>The space will house <strong>state-of-the-art prototyping labs, recording studios, and co-working areas</strong> available to all enrolled students free of charge. Programming will include mentorship sessions with industry leaders, funding pitch competitions, and a rotating residency for student startups.</p>
+          <div class="quote-block">
+            <p>"This hub is a direct response to what our students have been telling us for years. They need real space to build real things. York is committed to making that happen."</p>
+            <cite>Dr. Rhonda Lenton, President &amp; Vice-Chancellor, York University</cite>
+          </div>
+          <p>Applications to reserve dedicated workspace in the hub open May 1, 2025 via the York student portal. The facility will officially launch with an open house on September 8, 2025.</p>
+          <p class="boilerplate"><strong>About York University:</strong> York University is one of Canada's largest universities, offering an exceptional academic experience across more than 200 undergraduate and graduate programs. Located in Toronto, York is committed to research excellence, student success, and creating positive change in the world. Visit yorku.ca for more information.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVENT ANNOUNCEMENT -->
+    <div class="rev">
+      <div class="tl york-tl"><span class="tl-b">Event Announcement</span><div class="tl-l"></div></div>
+      <div class="card y-event">
+        <div class="y-event-in">
+          <div class="y-event-bg">E</div>
+          <span class="kicker">York Design Collective · Annual Event</span>
+          <h2>Portfolio Night<br><span>Is Back.</span></h2>
+          <div class="e-meta">
+            <span class="em">📅 Thursday, April 17</span>
+            <span class="em">🕕 6:00 PM – 9:00 PM</span>
+            <span class="em">📍 Vari Hall, York U</span>
+            <span class="em">Free · All Welcome</span>
+          </div>
+          <p>The biggest night in York's design calendar is back and this year, we're going bigger. <strong>Portfolio Night 2025</strong> brings together students, alumni, and industry professionals for an evening of showcasing work, making connections, and celebrating everything the York design community has built this year.<br><br>Whether you're showing your portfolio or just looking for inspiration, <strong>everyone is welcome</strong>. Come as you are.</p>
+          <a class="y-event-cta">Register Now. It's Free.</a>
+        </div>
+        <div class="y-event-ft">
+          <span>York Design Collective · York University</span>
+          <span>Event Announcement</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ORG 2: TORONTO ARTS COLLECTIVE — 3 samples
+═══════════════════════════════════════════ -->
+<div id="org-tac" class="tac-sec">
+  <div class="org-banner tac-banner">
+    <div class="ob-inner">
+      <div>
+        <span class="ob-n">Organisation 02</span>
+        <div class="ob-name">Toronto Arts Collective</div>
+        <p class="ob-tagline">A Toronto-based arts organisation supporting emerging artists and community programming. Warm terracotta and cream palette — editorial, cultured, approachable.</p>
+      </div>
+      <div class="ob-pills">
+        <span class="ob-pill">Terracotta #C4612A</span>
+        <span class="ob-pill">Dark Brown #2C1A0E</span>
+        <span class="ob-pill">Cream #FAF6EF</span>
+        <span class="ob-pill">3 samples</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="org-body">
+
+    <!-- TAC INSTAGRAM -->
+    <div class="rev">
+      <div class="tl tac-tl"><span class="tl-b">Instagram Post</span><div class="tl-l"></div></div>
+      <div class="card tac-card">
+        <div class="y-bar" style="background:var(--tad)"><span class="y-bar-l" style="color:var(--tamt)">@torontoartscollective</span><span class="y-bar-r" style="color:var(--ta)">Feed Post</span></div>
+        <div class="tac-vis tac-vis-a">
+          <span class="tac-vis-tag">Open Call</span>
+          <h3>Your art<br>belongs here.</h3>
+          <p>Summer Residency 2025 · Applications Open</p>
+        </div>
+        <div class="tac-body-p">
+          <div class="tac-handle">torontoartscollective</div>
+          <p class="tac-cap"><strong>We believe every artist deserves space to create.</strong> That's why we're opening 6 fully paid summer residency spots to artists at any stage of their career. No restrictions on medium, no gatekeeping, no prerequisites.<br><br>Just your work, your voice, and a space that's entirely yours. Applications close April 30th. Link in bio to apply 🎨</p>
+          <p class="tac-tags">#TorontoArts #ArtistResidency #OpenCall #TorontoArtist #EmergingArtist #SummerResidency</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAC EMAIL -->
+    <div class="rev">
+      <div class="tl tac-tl"><span class="tl-b">Email Newsletter</span><div class="tl-l"></div></div>
+      <div class="card tac-card">
+        <div class="tac-em-chrome">
+          <div class="tef"><span class="tef-l">From</span><span class="tef-v"><strong>Toronto Arts Collective</strong> &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="19717c757576596d766b76776d76786b6d6a377a78">[email&#160;protected]</a>&gt;</span></div>
+          <div class="tef"><span class="tef-l">To</span><span class="tef-v">Our Community</span></div>
+          <div class="tef"><span class="tef-l">Sub</span><span class="tef-v"><strong>April is here and so is your next favourite show 🎭</strong></span></div>
+        </div>
+        <div class="tac-em-body">
+          <p class="tac-pre">This month: new exhibitions, open calls, and a community spotlight you won't want to miss.</p>
+          <div class="tac-hd">
+            <span class="tac-org">Toronto Arts Collective</span>
+            <h2>April's the month<br>for <em>bold things.</em></h2>
+          </div>
+          <p class="tac-ep">Hi there,</p>
+          <p class="tac-ep">Spring has finally arrived and with it, some of the most exciting programming we've put together all year. Whether you're a longtime member or just discovering us, <strong>April has something for everyone</strong> in our community.</p>
+          <hr class="tac-hr">
+          <div class="tac-block"><p>🎨 <strong>New Exhibition: "Threshold"</strong><br>Opening April 18th at our Kensington Market gallery. A group show exploring what it means to stand on the edge of something. Featuring 12 emerging Toronto artists. Free admission, all ages welcome.</p></div>
+          <div class="tac-block"><p>📢 <strong>Open Call: Summer Residency 2025</strong><br>Applications are open until April 30th. We're offering 6 paid residency spots for artists at any career stage. No restrictions on medium. Just bring your vision.</p></div>
+          <div class="tac-block"><p>🎤 <strong>Community Spotlight: May Panel Series</strong><br>Three evenings of conversations with working Toronto artists covering sustainability, creative business, and making work that matters. Free to attend, registration required.</p></div>
+          <p class="tac-ep">As always, our doors are open. Come make something, see something, or just be around people who care about art as much as you do.</p>
+          <a class="tac-btn">See Full April Programme →</a>
+          <p class="tac-em-ft">You're receiving this because you're part of the Toronto Arts Collective community. To unsubscribe, click here. 720 Bathurst St, Toronto, ON.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAC WEB COPY -->
+    <div class="rev">
+      <div class="tl tac-tl"><span class="tl-b">Website Copy</span><div class="tl-l"></div></div>
+      <div class="card tac-card">
+        <div class="tac-browser">
+          <div class="bb-d"><div class="dd r"></div><div class="dd y"></div><div class="dd g"></div></div>
+          <div class="tac-url">torontoartscollective.ca/about</div>
+        </div>
+        <div class="tac-web-inner">
+          <span class="eye">Who We Are</span>
+          <h2>Art that belongs<br>to <em>everyone.</em></h2>
+          <p>Toronto Arts Collective was founded on one belief: that art shouldn't be reserved for the few. Since 2016, we've been creating space, physical and otherwise, for emerging and established artists across every medium to create, connect, and be seen.</p>
+          <p>We run a gallery in Kensington Market, a year-round residency programme, community workshops, and a speaker series that brings the Toronto arts world into conversation with itself. <strong>Everything we do is rooted in accessibility.</strong> Most of our programming is free. All of it is for you.</p>
+          <p>Whether you're an artist looking for your next home, an art lover looking for your next favourite show, or someone just beginning to wonder if this world might be for you. <strong>You're in the right place.</strong></p>
+          <a class="tac-web-cta">Explore What's On →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ORG 3: FOODSHARE TORONTO — 3 samples
+═══════════════════════════════════════════ -->
+<div id="org-fs" class="fs-sec">
+  <div class="org-banner fs-banner">
+    <div class="ob-inner">
+      <div>
+        <span class="ob-n">Organisation 03</span>
+        <div class="ob-name">FoodShare Toronto</div>
+        <p class="ob-tagline">A community food organisation fighting food insecurity across Toronto. Deep forest green and gold palette — grounded, purposeful, community-driven.</p>
+      </div>
+      <div class="ob-pills">
+        <span class="ob-pill">Forest #1B4332</span>
+        <span class="ob-pill">Sage #52796F</span>
+        <span class="ob-pill">Gold #D4A84B</span>
+        <span class="ob-pill">3 samples</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="org-body">
+
+    <!-- FS 2-COL INSTAGRAM -->
+    <div class="rev">
+      <div class="tl fs-tl"><span class="tl-b">Instagram Posts</span><div class="tl-l"></div></div>
+      <div class="fs-2col">
+
+        <div class="card fs-card">
+          <div class="fs-bar"><span class="fs-bar-l">@foodsharetoronto</span><span class="fs-bar-r">Awareness</span></div>
+          <div class="fs-vis fs-vis-a">
+            <span class="fs-vis-tag">Community Impact</span>
+            <h3>1 in 8 Toronto<br>residents faces<br>food insecurity.</h3>
+            <p>Together, we can change that.</p>
+          </div>
+          <div class="fs-body-p">
+            <div class="fs-handle">foodsharetoronto</div>
+            <p class="fs-cap"><strong>Food is a right, not a privilege.</strong> This week, our volunteers distributed over 4,200 meals across 14 Toronto neighbourhoods, made possible by people like you.<br><br>Volunteer shifts are open for May. Link in bio. No experience needed, just show up. 🌱</p>
+            <p class="fs-tags">#FoodShareToronto #FoodSecurity #TorontoVolunteer #CommunityFirst #FoodJustice</p>
+          </div>
+        </div>
+
+        <div class="card fs-card">
+          <div class="fs-bar"><span class="fs-bar-l">@foodsharetoronto</span><span class="fs-bar-r">Fundraising</span></div>
+          <div class="fs-vis fs-vis-b">
+            <span class="fs-vis-tag">Spring Drive 2025</span>
+            <h3>$10 feeds<br>a family<br>for a day. 🌿</h3>
+            <p>Every dollar stays in Toronto communities.</p>
+          </div>
+          <div class="fs-body-p">
+            <div class="fs-handle">foodsharetoronto</div>
+            <p class="fs-cap"><strong>Our Spring Food Drive is live and every dollar counts.</strong> Last year you helped us serve over 60,000 meals to families across the city. This year, we want to go further.<br><br>Donate, share, or volunteer. However you can help. We're grateful. Link in bio 🙏</p>
+            <p class="fs-tags">#SpringFoodDrive #FoodShareToronto #GiveBack #Toronto #FeedOurCity #Nonprofit</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FS EMAIL -->
+    <div class="rev" style="padding-bottom:1rem">
+      <div class="tl fs-tl"><span class="tl-b">Email Newsletter</span><div class="tl-l"></div></div>
+      <div class="card fs-card">
+        <div class="fs-em-chrome">
+          <div class="fef"><span class="fef-l">From</span><span class="fef-v"><strong>FoodShare Toronto</strong> &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2aaa7aeaead82a4adada6b1aaa3b0a7ecaca7b6">[email&#160;protected]</a>&gt;</span></div>
+          <div class="fef"><span class="fef-l">To</span><span class="fef-v">Our Volunteers &amp; Supporters</span></div>
+          <div class="fef"><span class="fef-l">Sub</span><span class="fef-v"><strong>You helped feed 4,200 families this week. Here's how. 🌿</strong></span></div>
+        </div>
+        <div class="fs-em-body">
+          <p class="fs-pre">A note of gratitude plus how to get involved this May.</p>
+          <div class="fs-hd">
+            <span class="fs-org">FoodShare Toronto</span>
+            <h2>Your city needed you.<br>You showed up.</h2>
+          </div>
+          <p class="fs-ep">Hi there,</p>
+          <p class="fs-ep">We want to start this newsletter with a simple, sincere thank you. <strong>This week, 4,200 meals reached families across 14 Toronto neighbourhoods</strong> and that happened because of you. Volunteers, donors, advocates, and neighbours who chose to give their time and resources to their community.</p>
+          <hr class="fs-hr">
+          <div class="fs-block"><p>🥬 <strong>May Volunteer Shifts Are Open</strong><br>We need hands at our Etobicoke and Scarborough distribution sites every Saturday morning from May through June. Sign up online. No prior experience needed. Just bring your energy and a willingness to help.</p></div>
+          <div class="fs-block"><p>🌱 <strong>Spring Food Drive: Goal of $50,000</strong><br>We're halfway there. Every $10 donated provides a full day of food for a family. Share our link, match a friend's donation, or simply spread the word. It all adds up.</p></div>
+          <div class="fs-block"><p>📊 <strong>April by the numbers:</strong> 4,200 meals distributed · 14 neighbourhoods served · 112 active volunteers · $28,400 raised through community donations.</p></div>
+          <p class="fs-ep">Toronto is a city that takes care of its own. Thank you for being part of that.</p>
+          <a class="fs-btn">Volunteer for May →</a>
+          <p class="fs-em-ft">You're receiving this as a FoodShare Toronto supporter. Unsubscribe anytime. 200 The East Mall, Etobicoke, ON M9B 6J6.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><span>Sangamitra</span> · Communications &amp; Marketing Assistant · York University · 2025</p>
+  <p><span>9 samples</span> · 3 organisations · 5 formats · IBM Plex Sans</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';setTimeout(()=>{curR.style.left=mx+'px';curR.style.top=my+'px';},80);});
+
+// Cursor changes per org
+const orgs=[{id:'org-york',dot:'#E31837',ring:'#E31837'},{id:'org-tac',dot:'#C4612A',ring:'#C4612A'},{id:'org-fs',dot:'#1B4332',ring:'#D4A84B'}];
+const oObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const o=orgs.find(x=>x.id===e.target.id);if(o){cur.style.background=o.dot;curR.style.borderColor=o.ring;}}});},{threshold:0.15});
+orgs.forEach(o=>{const el=document.getElementById(o.id);if(el)oObs.observe(el);});
+
+// Hover scale
+document.querySelectorAll('a,.y-cta,.y-event-cta,.tac-btn,.tac-web-cta,.fs-btn,.card,.os').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';curR.style.transform='translate(-50%,-50%) scale(1.5)'});
+  el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';curR.style.transform='translate(-50%,-50%) scale(1)'});
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.06});
+document.querySelectorAll('.card,.rev').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.1)+'s';obs.observe(el);});
+
+// Nav active
+const navAs=document.querySelectorAll('.nav-a');
+const nObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navAs.forEach(a=>a.classList.remove('on'));con
